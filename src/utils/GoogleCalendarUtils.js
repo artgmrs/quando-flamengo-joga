@@ -12,4 +12,4 @@ const generateGoogleCalendarLink = () => {
   return url;
 }
 
-export { generateGoogleCalendarLink };
+export default { generateGoogleCalendarLink };
