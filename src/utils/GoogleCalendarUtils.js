@@ -1,10 +1,12 @@
-const generateGoogleCalendarLink = ({dados, date}) => {
+import { addHours } from "./DateUtils";
 
-  if (dados) {
+const generateGoogleCalendarLink = ( nomeRival, date ) => {
+  if (nomeRival !== undefined && date !== undefined)
+  {
     const baseUrl = 'https://calendar.google.com/calendar/render';
-    
-    const title = `Flamengo x ${dados.nomeRival}`;
-    
+  
+    const title = `Flamengo x ${nomeRival}`;
+  
     const startDate = date.toISOString().replace(/[^a-zA-Z0-9]/g, '');
     const endDate = addHours(date, 2).toISOString().replace(/[^a-zA-Z0-9]/g, '');
     const timeZone = 'America/Sao_Paulo';
@@ -13,8 +15,6 @@ const generateGoogleCalendarLink = ({dados, date}) => {
   
     return url;
   }
-
-  return '';
 }
 
 export { generateGoogleCalendarLink };
