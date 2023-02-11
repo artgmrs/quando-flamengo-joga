@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import getNextGame from '../../services/ApiService'
 import { useEffect } from 'react';
 import { addHours, formatDate } from '../../utils/DateUtils.js'
-import generateGoogleCalendarLink from '../../utils/GoogleCalendarUtils'
+import { generateGoogleCalendarLink } from '../../utils/GoogleCalendarUtils'
 
 const GameDisplay = () => {
   const [dados, setDados] = useState({});
@@ -36,7 +36,7 @@ const GameDisplay = () => {
           <h4>Data e Hora: {formatDate(dados.dataHoraJogo)}</h4>
           {/* <h4>Mandante? {isMandante}</h4> */}
 
-          <a href={generateGoogleCalendarLink()} target="_blank">Adicionar ao calendário</a>
+          <a href={generateGoogleCalendarLink(dados, date)} target="_blank">Adicionar ao calendário</a>
         </div>
       }
     </>
