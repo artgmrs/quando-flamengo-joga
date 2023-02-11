@@ -11,4 +11,4 @@
     return newDate.toLocaleString();
   }
 
-  export default { addHours, formatDate };
+  export { addHours, formatDate };
