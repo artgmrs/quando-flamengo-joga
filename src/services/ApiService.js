@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = 'http://localhost:3000/proximo-jogo';
+const url = 'https://fla-scrapper.vercel.app/proximo-jogo';
 
 async function getNextGame() {
   const { data: data } = await axios.get(url, {
