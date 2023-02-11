@@ -7,8 +7,8 @@ const generateGoogleCalendarLink = ( nomeRival, date ) => {
   
     const title = encodeURIComponent(`Flamengo x ${nomeRival}`);
   
-    const startDate = date.toISOString().replace(/[.]\d+/, '').replace(/[^a-zA-Z0-9]/g, '').replace('.000Z', 'Z');
-    const endDate = addHours(date, 2).toISOString().replace(/[.]\d+/, '').replace(/[^a-zA-Z0-9]/g, '').replace('.000Z', 'Z');
+    const startDate = date.toISOString().replace(/[.]\d+/, '').replace(/[^a-zA-Z0-9]/g, '');
+    const endDate = addHours(date, 2).toISOString().replace(/[.]\d+/, '').replace(/[^a-zA-Z0-9]/g, '');
     const timeZone = 'America/Sao_Paulo';
   
     const url = `${baseUrl}?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&ctz=${timeZone}`;
