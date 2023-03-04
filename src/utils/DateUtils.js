@@ -8,7 +8,7 @@
 
   const formatDate = (date = new Date()) =>  {
     const newDate = new Date(date);
-    return newDate.toLocaleString();
+    return newDate.toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo");
   }
 
   export { addHours, formatDate };
