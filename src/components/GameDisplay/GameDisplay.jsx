@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import getNextGame from '../../services/ApiService'
 import { useEffect } from 'react';
-import { addHours, formatDate } from '../../utils/DateUtils.js'
+import { formatDate } from '../../utils/DateUtils.js'
 import { generateGoogleCalendarLink } from '../../utils/GoogleCalendarUtils'
 
 const GameDisplay = () => {
@@ -9,11 +9,9 @@ const GameDisplay = () => {
 
   // let isMandante = dados.mandante ? 'Sim' : 'Não';
   let date;
-  let endDate;
   
   if (dados.dataHoraJogo) {
     date = new Date(dados.dataHoraJogo);
-    endDate = addHours(date, 2);
   }
 
   useEffect(() => {
