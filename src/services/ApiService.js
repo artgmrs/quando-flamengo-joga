@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// const url = 'https://flascrapper.vercel.app/games/next-game';
-const url = 'https://flascrapper.vercel.app/api/hello';
+const url = 'https://flascrapper.vercel.app/api/nextgame';
 
 async function getNextGame() {
   const { data: data } = await axios.get(url, {
