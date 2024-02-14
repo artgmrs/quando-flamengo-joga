@@ -13,8 +13,6 @@ const generateGoogleCalendarLink = ( nomeRival, date ) => {
   
     const url = `${baseUrl}?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&ctz=${timeZone}`;
 
-    console.log(url);
-  
     return url;
   }
 }

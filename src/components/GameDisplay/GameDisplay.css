@@ -20,6 +20,8 @@
   min-width: 500px;
   min-height: 270px;
   border-radius: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
 .loader-container {
@@ -29,5 +31,36 @@
 
 .box img {
   width: 150px;
-  height: 150px;
+  height: 170px;
+}
+
+.championship {
+
+}
+
+.box-teams {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.team-principal {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-secondary {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  margin: 15px;
+  display: block;
 }

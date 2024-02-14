@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import getNextGame from '../../services/ApiService'
 import { useEffect } from 'react';
-import { formatDate } from '../../utils/DateUtils.js'
+import { formatFullDate, formatDate, formatTime } from '../../utils/DateUtils.js'
 import { generateGoogleCalendarLink } from '../../utils/GoogleCalendarUtils'
 import ClipLoader from 'react-spinners/ClipLoader';
 import {
@@ -61,15 +61,34 @@ const GameDisplay = () => {
             </div>
           ) : (
             <>
-              {/* <img src='src/assets/flamengo.png'></img> */}
-              <h1>Próximo jogo do Flamengo</h1>
-              <h3>{dados.campeonato}</h3>
-              <h4>{dados.nomeRival}</h4>
-              <img src={dados.imagemRival}></img>
-              <h4>Data e Hora: {formatDate(dados.dataHoraJogo)}</h4>
-              {/* <h4>Mandante? {isMandante}</h4> */}
+              {/* Engrossar fonte do campeonato */}
+              <h3 className="championship">{dados.campeonato}</h3>
 
-              <a href={generateGoogleCalendarLink(dados.nomeRival, date)} target="_blank">Adicionar ao calendário</a>
+                {!dados.mandante ?
+                  <div className="box-teams">
+                    <div className="team-principal">
+                      <img src={"/flamengo_escudo.png"}></img>
+                      <h4>Flamengo</h4>
+                    </div>
+                    <div className="team-secondary">
+                      <img src={dados.imagemRival}></img>
+                      <h4>{dados.nomeRival}</h4>
+                    </div>
+                  </div>
+                  :
+                  <div>
+                    <img src={dados.imagemRival}></img>
+                    <h4>{dados.nomeRival}</h4>
+                  </div>
+                }
+
+              {/* <h4>{formatFullDate(dados.dataHoraJogo)}</h4> */}
+              <h4>{formatDate(dados.dataHoraJogo)}</h4>
+              <h4>{formatTime(dados.dataHoraJogo)}</h4>
+
+              <div className="box-link">
+                <a className="link" href={generateGoogleCalendarLink(dados.nomeRival, date)} target="_blank">Adicionar ao calendário</a>
+              </div>
             </>
           )
           }
