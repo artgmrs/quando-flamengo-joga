@@ -29,5 +29,19 @@
 
 body {
   overflow: hidden;
-  background-color: black;
+  height:100vh;
+  width:100vw;
+  position:relative;
+  overflow:hidden;
+  background:#000000;
+  &:before{
+    content:'';
+    position:absolute;
+    width:350%;
+    height:250%;
+    top:-25%;
+    left:-25%;
+    border-radius:100%;
+    background:radial-gradient(ellipse at center, #000000 27.5%, #c22a1e 27.5%) 62.5% 37.5% / 100% 200% no-repeat;
+  }
 }
